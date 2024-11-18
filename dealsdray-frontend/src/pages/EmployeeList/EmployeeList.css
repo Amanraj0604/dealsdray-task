@@ -1,0 +1,267 @@
+
+.employee-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.employee-top span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative; 
+}
+
+.employee-top span svg {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.employee-top span .tooltip {
+    display: none;
+    color: white;
+    text-decoration: none;
+    background: black;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+
+.employee-top span:hover .tooltip {
+    display: block; 
+}
+
+/* Container styling */
+.employee-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .employee-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .employee-table th, .employee-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .employee-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  /* Profile image */
+  .employee-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  /* Actions styling */
+  .employee-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .action-icon {
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .action-icon:hover {
+    color: #007bff;
+  }
+  
+  /* Pagination styling */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+  }
+  
+  .pagination li {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination .active {
+    background: #000000;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+
+
+  /* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+.popup-profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form labels */
+.popup-content form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* Form inputs */
+.popup-content form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.popup-content form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.popup-content form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Save button */
+.popup-content form button[type="submit"] {
+  background-color: orange;
+  color: #ffffff;
+}
+
+.popup-content form button[type="submit"]:hover {
+  background-color: orange;
+}
+
+/* Cancel button */
+.popup-content form button[type="button"] {
+  background-color: #cccccc;
+  color: #333333;
+}
+
+.popup-content form button[type="button"]:hover {
+  background-color: #aaaaaa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup-content {
+      width: 95%;
+      padding: 15px;
+  }
+
+  .popup-content h3 {
+      font-size: 1.3rem;
+  }
+
+  .popup-content form input {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+
+  .popup-content form button {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}

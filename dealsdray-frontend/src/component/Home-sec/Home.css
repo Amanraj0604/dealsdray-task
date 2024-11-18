@@ -1,0 +1,135 @@
+
+.home-sec{
+    display: flex;
+    margin-left: 8%;
+    margin-top: 30px;
+    
+}
+.left-content{
+    flex: 40%;
+    margin-top: 4.5%;
+    height: 550px;
+    height: 400px;  
+    background-image: url('https://uploads-ssl.webflow.com/633d5b1f55a345624816a7ee/63458110b1082f1543e9c662_Polygon%206.svg'), url('https://uploads-ssl.webflow.com/633d5b1f55a345624816a7ee/6345814bfcd41acc9c6cfd61_diamond%201.png') ; 
+    background-position: 430px 75px, 75% 80%;
+    background-size: 7%, 7%;  
+    background-repeat: no-repeat, no-repeat;
+}
+.left-content h1{
+    font-size: 70px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+.left-content span{
+    color: #275df5;
+}
+.left-content p{
+    font-size: 30px;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    margin-top: -4%;
+}
+.left-content button{
+    padding: 20px 50px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border-radius: 20px;
+    border: none;
+    background: #F86854;
+    transition: transform 0.6s ease-in-out;
+}
+.left-content button:hover {
+    transform: scale(1.2); 
+}
+
+
+
+.right-slider {
+    flex: 60%;
+    padding: 0;
+    overflow: hidden; /* Ensures that the marquee contents are hidden beyond the container */
+    position: relative; /* To position the shadow overlay */
+}
+
+.right-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),
+                linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),  
+                linear-gradient(to left, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%), 
+                linear-gradient(to right, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%); 
+    z-index: 1;
+}
+
+.slide-sec {
+    display: flex;
+    position: relative; 
+    z-index: 0; 
+}
+
+.slide-sec marquee {
+    display: flex;
+    transform: rotate(-10deg);
+    height: 500px;
+}
+
+.slide-sec img {
+    margin-top: 15%;
+    z-index: 0; 
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Slide up from the bottom */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Return to the original position */
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9); /* Slightly shrink the images */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* Return to the original size */
+    }
+  }
+  
+  .left-content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .right-slider {
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .visible {
+    animation: fadeInUp 1s forwards; /* Trigger the fade-in and slide-up animation */
+  }
+  
+  .marquee-visible {
+    animation: fadeIn 1s forwards; /* Trigger the fade-in and scale animation */
+  }
+  
